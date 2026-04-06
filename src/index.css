@@ -459,17 +459,33 @@ input { font-family: var(--font-body); outline: none; }
 .filter-btn:hover { border-color: var(--border-bright); color: var(--cream); }
 .filter-btn.active { color: var(--gold); border-color: var(--gold); background: var(--gold-dim); }
 
+.search-row {
+  position: relative;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 20px;
+  pointer-events: none;
+}
 .search-input {
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r);
-  padding: 12px 20px;
+  padding: 14px 20px 14px 48px;
   font-size: 14px;
   color: var(--cream);
-  min-width: 320px;
-  transition: border-color 0.2s;
+  outline: none;
+  transition: all 0.2s;
 }
-.search-input:focus { border-color: var(--gold); }
+.search-input::placeholder { color: var(--cream-3); }
+.search-input:focus { border-color: var(--gold); background: var(--surface-2); box-shadow: 0 0 15px var(--gold-glow); }
 
 /* ============================================================
    LOGIN PAGE
