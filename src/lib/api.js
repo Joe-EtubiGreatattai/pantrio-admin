@@ -1,6 +1,6 @@
 import { supabase } from './supabase';
 
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const BASE = import.meta.env.VITE_API_URL || 'https://pantrio-server.onrender.com';
 
 async function adminHeaders() {
   const { data: { session } } = await supabase.auth.getSession();
@@ -16,8 +16,8 @@ async function get(path) {
   return res.json();
 }
 
-export const getStats       = ()           => get('/stats');
+export const getStats = () => get('/stats');
 export const getRecentEvents = (limit = 50) => get(`/events?limit=${limit}`);
-export const getEventsByDay  = (days = 14)  => get(`/events/day?days=${days}`);
-export const getTopItems     = ()           => get('/items/top');
-export const getUsers        = ()           => get('/users');
+export const getEventsByDay = (days = 14) => get(`/events/day?days=${days}`);
+export const getTopItems = () => get('/items/top');
+export const getUsers = () => get('/users');
