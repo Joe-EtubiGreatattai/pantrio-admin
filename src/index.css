@@ -553,6 +553,31 @@ input { font-family: var(--font-body); outline: none; }
   border-color: var(--gold);
 }
 
+.input-reveal {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-reveal input {
+  width: 100%;
+  padding-right: 44px;
+}
+.reveal-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cream-3);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+.reveal-btn:hover { color: var(--gold); }
+
 .login-btn {
   width: 100%;
   padding: 14px;
