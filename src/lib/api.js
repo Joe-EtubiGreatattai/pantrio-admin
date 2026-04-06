@@ -21,3 +21,25 @@ export const getRecentEvents = (limit = 50) => get(`/events?limit=${limit}`);
 export const getEventsByDay = (days = 14) => get(`/events/day?days=${days}`);
 export const getTopItems = () => get('/items/top');
 export const getUsers = () => get('/users');
+export const getAdmins     = ()           => get('/admins');
+export const createAdmin     = (data)       => post('/admins', data);
+export const deleteAdmin     = (email)      => del(`/admins/${email}`);
+
+async function post(path, body) {
+  const res = await fetch(`${BASE}/api/admin${path}`, {
+    method: 'POST',
+    headers: await adminHeaders(),
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error((await res.json()).error);
+  return res.json();
+}
+
+async function del(path) {
+  const res = await fetch(`${BASE}/api/admin${path}`, {
+    method: 'DELETE',
+    headers: await adminHeaders(),
+  });
+  if (!res.ok) throw new Error((await res.json()).error);
+  return res.json();
+}

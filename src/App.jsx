@@ -4,6 +4,7 @@ import LoginPage    from './pages/LoginPage';
 import OverviewPage from './pages/OverviewPage';
 import EventsPage   from './pages/EventsPage';
 import UsersPage    from './pages/UsersPage';
+import StaffPage    from './pages/StaffPage';
 import Layout       from './components/Layout';
 
 function PrivateRoute({ children }) {
@@ -25,6 +26,7 @@ function AppRoutes() {
       <Route path="/"       element={<PrivateRoute><OverviewPage /></PrivateRoute>} />
       <Route path="/events" element={<PrivateRoute><EventsPage /></PrivateRoute>} />
       <Route path="/users"  element={<PrivateRoute><UsersPage /></PrivateRoute>} />
+      <Route path="/staff"  element={<PrivateRoute><StaffPage /></PrivateRoute>} />
       <Route path="*"       element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -5,6 +5,7 @@ const NAV = [
   { to: '/',       label: 'Overview',  icon: '◈' },
   { to: '/events', label: 'Events',    icon: '◉' },
   { to: '/users',  label: 'Users',     icon: '◎' },
+  { to: '/staff',  label: 'Staff',     icon: '✧' },
 ];
 
 export default function Layout({ children }) {
